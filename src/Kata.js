@@ -30,6 +30,7 @@ function removeDuplicateds(sums){
     aux = sum.split('').sort().join('');
     temp.push(aux);
   });
+  temp.sort();
   for (var f=0; f<temp.length; f++)
   {
     if (temp[f]!==temp[f+1]){
