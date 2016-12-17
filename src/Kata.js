@@ -1,42 +1,13 @@
 function sum(num){
-  var sums =[], finalSums = [];
+  var k1, k2, 
+      result = 0 ;
 
-  sums = calculateSum(num);
-  finalSums = removeDuplicateds(sums);
-  console.log (num + ':' + finalSums);
-  return finalSums.length;
-}
-
-function calculateSum(num){
-  var sums = [], auxSums = [];
-
-  if (num <= 0) return sums;
-  if (num === 1) return ['1'];
-  sums.push(num.toString());
-  for (var f=num; f>0; f--){
-    auxSums = calculateSum(num-f);
-    auxSums.forEach(function(auxSum){
-      sums.push(f.toString()+auxSum);
-    });
-  } 
-  return sums;
-}
-
-function removeDuplicateds(sums){
-  var result = [], 
-      temp = [],
-      aux;
-  sums.forEach(function(sum){
-    aux = sum.split('').sort().join('');
-    temp.push(aux);
-  });
-  temp.sort();
-  for (var f=0; f<temp.length; f++)
-  {
-    if (temp[f]!==temp[f+1]){
-      result.push(temp[f]);
-    }
+  if (num < 0) return 0;
+  if (num <= 1) return 1;
+  for (var f = 1; f<=num; f++) {
+    k1 = f*(3*f-1)/2;
+    k2 = f*(3*f+1)/2;
+    result += Math.pow (-1,f+1) * (sum(num-k1) + sum(num-k2));
   }
-
   return result;
-};
+}

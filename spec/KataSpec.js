@@ -6,7 +6,7 @@ describe('Kata', function() {
       expect(true).toBeTruthy();
     });
 
-    describe ('removeDuplicateds',function () {
+ /*   describe ('removeDuplicateds',function () {
 
         it('should reorder each element in the array', function() {
           var sums = ['4213'], result = [];
@@ -31,9 +31,9 @@ describe('Kata', function() {
           expect(result[0]).toEqual('12','First element should be 12.');
           expect(result.length).toEqual( 3,'Should have removed duplicated elements only.');
         });
-    });
+    }); */
 
-    describe ('sum',function () {
+    describe ('basic cases',function () {
 
         it('should calculate explosive sum of -1', function() {
           var num = -1,
@@ -44,7 +44,7 @@ describe('Kata', function() {
 
         it('should calculate explosive sum of 0', function() {
           var num = 0,
-              expected = 0;
+              expected = 1;
 
           expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
         });
@@ -76,5 +76,71 @@ describe('Kata', function() {
 
           expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
         });
-    });   
+
+        it('should calculate explosive sum of 5', function() {
+          var num = 5,
+              expected = 7;
+
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 10', function() {
+          var num = 10,
+              expected = 42;
+
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+    }); 
+
+    describe ('explosive cases',function () {
+
+        it('should calculate explosive sum of 12', function() {
+          var num = 12,
+              expected = 77;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 13', function() {
+          var num = 13,
+              expected = 101;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 15', function() {
+          var num = 15,
+              expected = 176;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 20', function() {
+          var num = 20,
+              expected = 627;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 33', function() {
+          var num = 33,
+              expected = 10143;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 34', function() {
+          var num = 34,
+              expected = 12310;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 35', function() {
+          var num = 35,
+              expected = 14883;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+    });  
 });
