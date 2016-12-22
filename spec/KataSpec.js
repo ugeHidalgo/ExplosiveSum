@@ -6,33 +6,6 @@ describe('Kata', function() {
       expect(true).toBeTruthy();
     });
 
- /*   describe ('removeDuplicateds',function () {
-
-        it('should reorder each element in the array', function() {
-          var sums = ['4213'], result = [];
-              
-          result = removeDuplicateds(sums);
-          expect(result[0]).toEqual('1234','4213 should be 1234');
-        });
-
-        it('should reorder the elements in the array', function() {
-          var sums = ['31','231','4213'], result = [];
-              
-          result = removeDuplicateds(sums);
-          expect(result[0]).toEqual('123','231 should be 123');
-          expect(result[1]).toEqual('1234','4213 should be 1234');
-          expect(result[2]).toEqual('13','31 should be 13');
-        }); 
-
-        it('should remove duplicated elements in the array', function() {
-          var sums = ['123','12','321','13','231'], result = [];
-              
-          result = removeDuplicateds(sums);
-          expect(result[0]).toEqual('12','First element should be 12.');
-          expect(result.length).toEqual( 3,'Should have removed duplicated elements only.');
-        });
-    }); */
-
     describe ('basic cases',function () {
 
         it('should calculate explosive sum of -1', function() {
@@ -139,6 +112,27 @@ describe('Kata', function() {
         it('should calculate explosive sum of 35', function() {
           var num = 35,
               expected = 14883;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 50', function() {
+          var num = 50,
+              expected = 204226;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 80', function() {
+          var num = 80,
+              expected = 15796476;
+              
+          expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
+        });
+
+        it('should calculate explosive sum of 100', function() {
+          var num = 100,
+              expected = 190569292;
               
           expect(sum(num)).toEqual(expected,'sum(' + num + ') should be ' + expected);
         });
